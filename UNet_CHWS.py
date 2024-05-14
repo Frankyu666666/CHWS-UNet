@@ -63,7 +63,7 @@ class up_conv(nn.Module):
         return x
 
 class Model(nn.Module):
-    def __init__(self, img_ch=3, output_ch=1, shortcut=[0, 0, 0, 0], mac_pattern=0, mic_pattern=0):
+    def __init__(self, img_ch=3, output_ch=1, shortcut=[1, 1, 1, 1], mac_pattern=0, mic_pattern=0):
         super(Model, self).__init__()
         self.Maxpool = nn.MaxPool2d(kernel_size=2, stride=2)
         self.Conv1 = conv_block(ch_in=img_ch, ch_out=64)
