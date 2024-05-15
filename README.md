@@ -1,4 +1,4 @@
-This is the official implementation of CHWS-UNet.   
+This is the official implementation of CHWS-UNet. The files ending with "_LCAM.py" and "_CHWS.py" indicate that the baseline models are improved by LCAM and CHWS module, respectively. 
 UNet_CHWS.py is the  implementationi of CHWS-UNet on basis of U-Net.  
 ![CHWS-UNet](UNet_base.png)
 #######UNet_CHWS.py#######  
