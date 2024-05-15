@@ -6,19 +6,18 @@ import torch.nn as nn
 from torch.nn import init  
 import math  
 import numpy as np  
-
-> class ChannelAttention(nn.Module):  
->>    def __init__(self, in_planes, ratio=8, gamma=2, b=1, pattern=3):  
->>>        super(ChannelAttention, self).__init__()  
->>>        self.avg_pool = nn.AdaptiveAvgPool2d(1)  
->>>        self.max_pool = nn.AdaptiveMaxPool2d(1)  
->>>        self.in_planes = in_planes   
->>>        kernel_size = int(abs((math.log(self.in_planes, 2) + b) / gamma))  
->>>        kernel_size = np.max([kernel_size, 3])  
->>>        kernel_size = kernel_size if kernel_size % 2 else kernel_size + 1  
->>>        self.con1 = nn.Conv1d(1,1,kernel_size=kernel_size, padding=(kernel_size - 1) // 2, bias=False)  
->>>        self.act1 = nn.Sigmoid()  
->>>        self.pattern = pattern  
+class ChannelAttention(nn.Module):  
+    def __init__(self, in_planes, ratio=8, gamma=2, b=1, pattern=3):  
+        super(ChannelAttention, self).__init__()  
+        self.avg_pool = nn.AdaptiveAvgPool2d(1)  
+        self.max_pool = nn.AdaptiveMaxPool2d(1)  
+        self.in_planes = in_planes   
+        kernel_size = int(abs((math.log(self.in_planes, 2) + b) / gamma))  
+        kernel_size = np.max([kernel_size, 3])  
+        kernel_size = kernel_size if kernel_size % 2 else kernel_size + 1  
+        self.con1 = nn.Conv1d(1,1,kernel_size=kernel_size, padding=(kernel_size - 1) // 2, bias=False)  
+        self.act1 = nn.Sigmoid()  
+        self.pattern = pattern  
 
 >    def forward(self, x):  
 >>        if self.pattern == 0:  
