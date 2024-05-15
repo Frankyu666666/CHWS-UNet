@@ -42,7 +42,7 @@ class ChannelAttention(nn.Module):
 # CHWS On basis of UNet      
 The implementation of CHWS module can be found in CHWSModule.py, where the mentioned SpatialAttention, HSAttention, CSAttention and WSAttention can be found in ECAEModule.py. UNet_CHWS.py is the  implementationi of CHWS-UNet on basis of U-Net.  
 <p align="center">
-  <img src="UNet_base.png" alt="CHWS-UNet on basis of U-Net" width="400" height="300">
+  <img src="UNet_base.png" alt="CHWS-UNet on basis of U-Net" width="600" height="450">
 </p>
 
 #######UNet_CHWS.py#######  
