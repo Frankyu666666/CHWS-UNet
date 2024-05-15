@@ -54,4 +54,4 @@ for i in range(0, len(shortcut)):
 ```
 
 # CHWS On basis of DSCAU-Net
-Thanks for the well done job of the authors who proposed [DCSAU-Net](https://github.com/xq141839/DCSAU-Net). The improved version of DCSAU-Net can be seen in DCSAU_Net_LCAM and DCSAU_Net_CHWS. For integration of the proposed attention module, stagewise inclusion of the attention module into the shortcut paths might be more benefitcial compared to inserting four modules into four paths ultimately. Nevertheless, readers are suggested to tweak a little bit for the best configurations.
+Thanks for the great job of the authors who proposed [DCSAU-Net](https://github.com/xq141839/DCSAU-Net). The improved version of DCSAU-Net can be seen in DCSAU_Net_LCAM and DCSAU_Net_CHWS. For integration of the proposed attention module, stagewise inclusion of the attention module into the shortcut paths might be more benefitcial compared to inserting four modules into four paths ultimately. Nevertheless, readers are suggested to tweak a little bit for the best configurations.
