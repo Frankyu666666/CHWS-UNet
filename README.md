@@ -43,4 +43,4 @@ for i in range(0, len(shortcut)):
 >> setattr(self, f"tp{i + 1}", CHWS(kernel_size=7, in_planes=[64*pow(2, i), 256//(pow(2, i)), 256//(pow(2, i))], mac_pattern=mac_pattern, mic_pattern=mic_pattern))  
 
 # CHWS On basis of DSCAU-Net
-Thanks for the well done job of the authors who proposed [DCSAU-Net](https://github.com/xq141839/DCSAU-Net). The improved version of DCSAU-Net can be seen in DCSAU_Net_LCAM and DCSAU_Net_CHWS.
+Thanks for the well done job of the authors who proposed [DCSAU-Net](https://github.com/xq141839/DCSAU-Net). The improved version of DCSAU-Net can be seen in DCSAU_Net_LCAM and DCSAU_Net_CHWS. For integration of the proposed attention module, stagewise inclusion of the attention module into the shortcut paths might be more benefitcial compared to inserting four modules into four paths ultimately. Nevertheless, readers are suggested to tweak a little bit for the best configurations.
