@@ -1,6 +1,6 @@
 This is the official implementation of CHWS-UNet. The files ending with "_LCAM.py" and "_CHWS.py" indicate that the baseline models are improved by LCAM and CHWS module, respectively.   
 The LCAM can be found in UNet_LCAM.py, coded as Channel Attention, otherwise can be seen below:
-'''  
+```
 # LCAM 
 import torch  
 import torch.nn as nn  
@@ -37,6 +37,7 @@ class ChannelAttention(nn.Module):
             out1 = self.con1(out1).transpose(-1, -2).unsqueeze(-1)    
         output = self.act1(out1)    
         return output    
+```
 
 # CHWS On basis of UNet      
 The implementation of CHWS module can be found in CHWSModule.py, where the mentioned SpatialAttention, HSAttention, CSAttention and WSAttention can be found in ECAEModule.py. UNet_CHWS.py is the  implementationi of CHWS-UNet on basis of U-Net.  
