@@ -7,7 +7,7 @@ import torch.nn as nn
 from torch.nn import init  
 import math  
 import numpy as np  
-class ChannelAttention(nn.Module):  
+class ChannelAttention(nn.Module):    
     def __init__(self, in_planes, ratio=8, gamma=2, b=1, pattern=3):  
         super(ChannelAttention, self).__init__()  
         self.avg_pool = nn.AdaptiveAvgPool2d(1)  
@@ -18,8 +18,7 @@ class ChannelAttention(nn.Module):
         kernel_size = kernel_size if kernel_size % 2 else kernel_size + 1  
         self.con1 = nn.Conv1d(1,1,kernel_size=kernel_size, padding=(kernel_size - 1) // 2, bias=False)  
         self.act1 = nn.Sigmoid()  
-        self.pattern = pattern  
-
+        self.pattern = pattern    
     def forward(self, x):  
         if self.pattern == 0:  
            out1 = self.avg_pool(x) + self.max_pool(x)  
@@ -38,7 +37,6 @@ class ChannelAttention(nn.Module):
             out1 = self.con1(out1).transpose(-1, -2).unsqueeze(-1)    
         output = self.act1(out1)    
         return output    
-'''  
 
 # CHWS On basis of UNet      
 The implementation of CHWS module can be found in CHWSModule.py, where the mentioned SpatialAttention, HSAttention, CSAttention and WSAttention can be found in ECAEModule.py. UNet_CHWS.py is the  implementationi of CHWS-UNet on basis of U-Net.  
