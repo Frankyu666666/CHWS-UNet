@@ -125,13 +125,13 @@ class Model(nn.Module):
         d4 = self.Up_conv4(d4)
 
         d3 = self.Up3(d4)
-        if self.shortcut[2]:
+        if self.shortcut[1]:
             x2 = self.tp2(x2)
         d3 = torch.cat((x2, d3), dim=1)
         d3 = self.Up_conv3(d3)
 
         d2 = self.Up2(d3)
-        if self.shortcut[3]:
+        if self.shortcut[0]:
             x1 = self.tp1(x1)
         d2 = torch.cat((x1, d2), dim=1)
         d2 = self.Up_conv2(d2)
