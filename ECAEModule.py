@@ -2,7 +2,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch
 import math
-from model.UNet_LCAM import ChannelAttention
+from .UNet_LCAM import ChannelAttention
 
 class SpatialAttention(nn.Module):
     def __init__(self, kernel_size=7):
